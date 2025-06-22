@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/product_controller.dart';
+import './product_item.dart';
 
 class ProductView extends GetView<ProductController> {
   const ProductView({super.key});
@@ -15,7 +16,7 @@ class ProductView extends GetView<ProductController> {
         () => ListView.builder(
           itemCount: controller.product.length,
           itemBuilder: (context, index) =>
-              ListTile(title: Text(controller.product[index]["name"])),
+              ProductItem(controller.product[index]),
         ),
       ),
       floatingActionButton: FloatingActionButton(
